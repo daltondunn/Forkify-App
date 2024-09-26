@@ -134,7 +134,6 @@ const controlAddRecipe = async function(newRecipe) {
 
    // Change ID in the URL; pushState() - allows us to change the URL without having to update the page
    window.history.pushState(null, '', `#${model.state.recipe.id}`);
-   console.log(window.history);
 
   } catch(err) {
     console.error(` 💥 ${err} 💥`);
@@ -142,9 +141,6 @@ const controlAddRecipe = async function(newRecipe) {
   }
 }
 
-const newFeature = function() {
-  console.log(`Welcome to the application`);
-}
 
 const init = function() {
   bookmarksView.addHandlerRender(controlBookmarks)
@@ -154,7 +150,6 @@ const init = function() {
   searchbarView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerPagination(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe)
-  newFeature();
 }
 init();
 
